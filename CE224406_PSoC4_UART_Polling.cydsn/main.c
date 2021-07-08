@@ -66,24 +66,55 @@ int main(void)
     UART_Start();
     
     /* Transmit header to the terminal */
-    UART_UartPutString("\r\n**********************************************************************************\r\n");
+    /*UART_UartPutString("\r\n**********************************************************************************\r\n");
     UART_UartPutString("This example uses polling to demonstrate UART operation\r\n");
     UART_UartPutString("If you see this text the terminal connection is configured correctly.\r\n");
     UART_UartPutString("Start typing to see an echo in the terminal.\r\n");
-    UART_UartPutString("\r\n");
-    
+    UART_UartPutString("\r\n");*/
+    int txdata[5];
     for(;;)
     {
-        if(UART_SpiUartGetRxBufferSize() != 0ul) {
+        txdata[0]=0xB3;
+        txdata[1]=0x10;
+        txdata[2]=0x18;
+        txdata[3]=0x25;
+        
+        UART_SpiUartWriteTxData(0xB3);
+        UART_SpiUartWriteTxData(0x10);
+        UART_SpiUartWriteTxData(0x18);
+        UART_SpiUartWriteTxData(0x25);
+        UART_SpiUartWriteTxData(txdata[0]^ txdata[1]^ txdata[2]^ txdata[3]^ txdata[4] );
+        break;
+     }  
+    int d=0;
+    for(;;)
+    {
+        d++;
+        if(d>1000000){break;}
+        
+    }
+    for(;;)
+    {
+         UART_SpiUartWriteTxData(0x00);
+        UART_SpiUartWriteTxData(0x00);
+        UART_SpiUartWriteTxData(0x00);
+        UART_SpiUartWriteTxData(0x00);
+        UART_SpiUartWriteTxData(0x00);
+        break;
+    }
+    
+  
+        
+        /*if(UART_SpiUartGetRxBufferSize() != 0ul) {
             uint32 data = UART_SpiUartReadRxData();
             UART_SpiUartWriteTxData(data);
-        }
+        }*/
         
         /* Below is an alternative that is simpler, but function used blocks until character is received */
         /* Characters typed on console are transmitted via UART using a low level API function*/
         //uint32 read_character = UART_UartGetChar(); 
         //UART_UartPutChar(read_character);
-    }
+    
 }
 
 /* [] END OF FILE */
