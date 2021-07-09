@@ -71,29 +71,192 @@ int main(void)
     UART_UartPutString("If you see this text the terminal connection is configured correctly.\r\n");
     UART_UartPutString("Start typing to see an echo in the terminal.\r\n");
     UART_UartPutString("\r\n");*/
-    int txdata[5];
+    int txdata_1[5];
+   
+   
+    
+    
     for(;;)
     {
-        txdata[0]=0xB3;
-        txdata[1]=0x10;
-        txdata[2]=0x18;
-        txdata[3]=0x25;
+        txdata_1[0]=0xB3;
+        txdata_1[1]=0x19;
+        txdata_1[2]=0x24;
+        txdata_1[3]=0x37;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+         
+    for(;;){
+        txdata_1[0]=0xB3;
+        txdata_1[1]=0x50;
+        txdata_1[2]=0xFF;
+        txdata_1[3]=0xFC;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
         
-        UART_SpiUartWriteTxData(0xB3);
-        UART_SpiUartWriteTxData(0x10);
-        UART_SpiUartWriteTxData(0x18);
-        UART_SpiUartWriteTxData(0x25);
-        UART_SpiUartWriteTxData(txdata[0]^ txdata[1]^ txdata[2]^ txdata[3]^ txdata[4] );
-        break;
-     }  
-    int d=0;
-    for(;;)
-    {
-        d++;
-        if(d>1000000){break;}
+        txdata_1[0]=0xB3;
+        txdata_1[1]=0x51;
+        txdata_1[2]=0xFF;
+        txdata_1[3]=0xFC;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
         
+         txdata_1[0]=0xB3;
+        txdata_1[1]=0x52;
+        txdata_1[2]=0xFF;
+        txdata_1[3]=0xFC;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+        
+         txdata_1[0]=0xB3;
+        txdata_1[1]=0x53;
+        txdata_1[2]=0xFF;
+        txdata_1[3]=0xFC;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+        
+         txdata_1[0]=0xB3;
+        txdata_1[1]=0x54;
+        txdata_1[2]=0xFF;
+        txdata_1[3]=0xFC;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+        
+         txdata_1[0]=0xB3;
+        txdata_1[1]=0x55;
+        txdata_1[2]=0xFF;
+        txdata_1[3]=0xFC;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+        
+         txdata_1[0]=0xB3;
+        txdata_1[1]=0x56;
+        txdata_1[2]=0xFF;
+        txdata_1[3]=0xFC;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+        
+         txdata_1[0]=0xB3;
+        txdata_1[1]=0x57;
+        txdata_1[2]=0xFF;
+        txdata_1[3]=0xFC;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+       
+        CyDelay(1000);
+        
+        txdata_1[0]=0xB3;
+        txdata_1[1]=0x50;
+        txdata_1[2]=0x00;
+        txdata_1[3]=0x00;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+        
+        txdata_1[0]=0xB3;
+        txdata_1[1]=0x51;
+         txdata_1[2]=0x00;
+        txdata_1[3]=0x00;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+        
+         txdata_1[0]=0xB3;
+        txdata_1[1]=0x52;
+        txdata_1[2]=0x00;
+        txdata_1[3]=0x00;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+        
+         txdata_1[0]=0xB3;
+        txdata_1[1]=0x53;
+        txdata_1[2]=0x00;
+        txdata_1[3]=0x00;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+        
+         txdata_1[0]=0xB3;
+        txdata_1[1]=0x54;
+        txdata_1[2]=0x00;
+        txdata_1[3]=0x00;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+        
+         txdata_1[0]=0xB3;
+        txdata_1[1]=0x55;
+         txdata_1[2]=0x00;
+        txdata_1[3]=0x00;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+        
+         txdata_1[0]=0xB3;
+        txdata_1[1]=0x56;
+        txdata_1[2]=0x00;
+        txdata_1[3]=0x00;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+        
+         txdata_1[0]=0xB3;
+        txdata_1[1]=0x57;
+        txdata_1[2]=0x00;
+        txdata_1[3]=0x00;
+        txdata_1[4]=( txdata_1[1]^ txdata_1[2]^ txdata_1[3]);
+       
+        for(int i=0;i<4;i++){
+             UART_SpiUartWriteTxData(txdata_1[i]);
+            }
+        CyDelay(1000);
     }
-    for(;;)
+     }  
+    
+    
+
+  /*  for(;;)
     {
          UART_SpiUartWriteTxData(0x00);
         UART_SpiUartWriteTxData(0x00);
@@ -101,7 +264,7 @@ int main(void)
         UART_SpiUartWriteTxData(0x00);
         UART_SpiUartWriteTxData(0x00);
         break;
-    }
+    }*/
     
   
         
